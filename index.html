@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slot Machine dei Nomi</title>
+    <title>🎅 secret santa 🎅</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 
     <!-- Meta tag standard per SEO -->
@@ -57,12 +57,16 @@
         </div>
     </div>
 
+    
+
     <script>
         // Elenco di nomi per la slot machine
         const names = [
             "Vale & Mauri", "Giulia & Vida", "Giulia & Zardi", "Alice & Riccardo",
             "Andrea & Herget", "Sharon & Bottari", "Annalisa & Stech",
-            "Andrea Bobe", "Simone Bedo"
+            "Andrea Barbiani", "Simone Bertolini", 
+            `<div class="row"><div class="col-12">⭐⭐⭐</div><div class="col-12">Premio Speciale</div><div class="col-12">💃 una stripper 💃</div><div class="col-12">⭐⭐⭐</div></div>`,
+            `<div class="row"><div class="col-12">⭐⭐⭐</div><div class="col-12">Premio Speciale</div><div class="col-12">🚀 un dildo 🚀</div><div class="col-12">⭐⭐⭐</div></div>`
         ];
 
         const slotDisplay = document.getElementById("slotDisplay");
@@ -77,7 +81,8 @@
 
             // Avvio dell'animazione della slot machine
             const interval = setInterval(() => {
-                slotDisplay.textContent = names[index];
+                //slotDisplay.textContent = names[index];
+                slotDisplay.innerHTML = names[index];
                 index = (index + 1) % names.length;
             }, speed);
 
@@ -85,7 +90,9 @@
             setTimeout(() => {
                 clearInterval(interval);
                 const randomName = names[Math.floor(Math.random() * names.length)];
-                slotDisplay.textContent = randomName;
+                //slotDisplay.textContent = randomName;
+                slotDisplay.innerHTML = randomName;
+
                 extractButton.disabled = false;
             }, duration);
         }
